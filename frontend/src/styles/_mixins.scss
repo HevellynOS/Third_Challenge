@@ -1,0 +1,26 @@
+// _mixins.scss
+@import './base/variables';
+
+@mixin mobile {
+  @media (max-width: $mobile-width) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$mobile-width + 1}) and (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: #{$tablet-width + 1}) and (max-width: #{$laptop-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$laptop-width + 1}) and (max-width: #{$desktop-width}) {
+    @content;
+  }
+}
