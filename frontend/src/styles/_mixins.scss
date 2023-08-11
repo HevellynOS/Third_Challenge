@@ -32,3 +32,26 @@
   flex-direction: column;
 
 }
+@mixin flex-center{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+@mixin flex-space-between{
+  align-items: center;
+  justify-content:space-between;
+  display: flex;
+}
+
+@mixin flex-space-around{
+  align-items: center;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin decoration-none{
+  text-decoration: none;
+  list-style: none;
+}
