@@ -9,7 +9,7 @@ import twitterIcon from '../../assets/images/twitter icon.png'
 const Footer = () => {
   return (
     <footer className='footer'>
-        <Logo logo={false}/>
+        <Logo logo={true}/>
       <nav className='container-nav-footer'>
         <ul>
             <li><a href="#">About us</a></li>
@@ -23,7 +23,7 @@ const Footer = () => {
             <li><a href=""><img src={twitterIcon} alt="" /></a></li>
         </ul>
       </nav>
-        <div>Contact: <a href="#">+91 1234567899</a></div>
+        <div className='contact'>Contact: <a href="#">+91 1234567899</a></div>
     </footer>
   )
 }

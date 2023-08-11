@@ -6,7 +6,7 @@ const NavBar: React.FC = () => {
 
 
   return (
-    <nav>
+    <nav className='navbar-header'>
         <Logo logo={false}/>
     </nav>
   );

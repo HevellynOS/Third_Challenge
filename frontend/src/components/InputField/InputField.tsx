@@ -12,6 +12,20 @@ const StyledInput = styled.input`
   border: 2px dashed #FC8019;
   border-radius: 10px;
   font-size: 16px;
+  &:hover {
+    border-color: #ff9f5b;
+    cursor: pointer; 
+  }
+
+  &:focus {
+    border-color: #FF5733; 
+    outline: none; 
+    box-shadow: 0 0 10px rgba(255, 87, 51, 0.5); 
+  }
+
+  &:active {
+    border-color: #E64A19;
+  }
 `;
 
 const InputField: React.FC<InputFieldProps> = ({ type }) => {

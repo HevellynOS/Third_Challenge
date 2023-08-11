@@ -1,5 +1,58 @@
-@import '../all'
+
 
 .footer{
-    @include fle
+    background-color: $color-primary;
+    color: $color-light;
+    @include flex-space-around;
+    height: 313px;
+    width: 100%;
+    @include tablet {
+        @include flex-center-column;
+    }
+    @include mobile {
+        @include flex-center-column;
+    }
+    @include tablet {
+        @include flex-center-column;
+    }
+  
+}
+
+.container-nav-footer{
+    @include flex-center-column;
+
+    ul{
+        @include flex-center;
+        gap: 2rem;
+    }
+    
+    li{
+        @include decoration-none;   
+    }
+    
+    a {
+        @include decoration-none;
+        color: $color-light;
+        gap: 60px;
+        &:hover{
+            cursor: pointer;
+            color: $color-hover;
+            border-radius: 5px;
+            transition: 1s;
+        }
+    }
+    
+    img{
+        gap: 20px;
+    }
+ 
+}
+.contact a {
+    @include decoration-none;
+    color: $color-light;
+    gap: 60px;
+    &:hover{
+        cursor: pointer;
+        text-decoration: underline;
+    }
 }

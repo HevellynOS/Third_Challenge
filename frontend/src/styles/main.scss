@@ -7,3 +7,35 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
+
+
+
+body {
+    @include desktop{
+        max-width: fit-content;
+        height: auto;
+        @include flex-center-column;
+    }
+    @include mobile{
+        max-width: fit-content;
+        height: auto;
+        @include flex-center-column;
+    }
+    @include laptop{
+        max-width: fit-content;
+        height: auto;
+        @include flex-center-column;
+    }
+    @include tablet{
+        max-width: fit-content;
+        height: auto;
+        @include flex-center-column;
+    }
+}
+
+.fitme-logo {
+    padding-left: 1rem;
+    font-size: $fs-xlarge;
+    font-weight: $font-weight-extra-bold;
+}
+
