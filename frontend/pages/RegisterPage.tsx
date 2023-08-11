@@ -7,9 +7,7 @@ import Footer from '../src/components/Footer/Footer';
 const RegisterPage: React.FC = () => {
   return (
     <>
-    <header>
-        <NavBar/>
-    </header>
+      <NavBar/>
     <main className='register-page'>
       <h1>Register</h1>
       <hr />

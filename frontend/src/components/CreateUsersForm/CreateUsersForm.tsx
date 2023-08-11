@@ -30,7 +30,7 @@ export const CreateUsersForm = () => {
             <InputField type='password'/>
         </div>
         <Button type='Register'/>
-        <p> Yes i have an account? <a href="#">Login</a> </p>
+        <p> Yes i have an account? <a className='login' href="#">Login</a> </p>
     </form>
   )
 }
