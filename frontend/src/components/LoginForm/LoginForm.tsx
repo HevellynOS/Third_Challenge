@@ -7,7 +7,7 @@ import Button from '../Button/Button'
 
 const LoginForm = () => {
   return (
-    <form action="">
+    <form action="" className={classes.form}>
         <div className={classes.container}>
             <LabelData data='Username'/>
             <InputField type='usernane'/>

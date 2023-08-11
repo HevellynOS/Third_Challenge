@@ -127,6 +127,37 @@
   transition: 1.2s;
 }
 
+.login-page {
+  width: 100%;
+  padding: 5rem;
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .login-page {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width: 480px) {
+  .login-page {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+}
+.login-page a {
+  color: #202020;
+  text-decoration: none;
+  list-style: none;
+}
+.login-page a:hover {
+  cursor: pointer;
+  color: #ff9f5b;
+  transition: 1.2s;
+}
+
 * {
   padding: 0;
   margin: 0;
