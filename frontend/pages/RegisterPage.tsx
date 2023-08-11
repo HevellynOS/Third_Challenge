@@ -1,6 +1,7 @@
 import React from 'react';
 import { CreateUsersForm } from '../src/components/CreateUsersForm/CreateUsersForm';
 import NavBar from '../src/components/NavBar/NavBar';
+import Footer from '../src/components/Footer/Footer';
 
 
 const RegisterPage: React.FC = () => {
@@ -14,10 +15,7 @@ const RegisterPage: React.FC = () => {
       <hr />
       <CreateUsersForm />
     </main>
-    <footer>
-
-        
-    </footer>
+      <Footer/>
     </>
 
   );
