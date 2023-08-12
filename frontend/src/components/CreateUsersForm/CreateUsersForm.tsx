@@ -29,7 +29,7 @@ export const CreateUsersForm = () => {
             <LabelData data='Confirm password'/>
             <InputField type='password'/>
         </div>
-        <Button type='Register'/>
+        <Button height='66px' radius='10px' color="#FFFFFF" backgroundColor="#FC8019" width="365px" type='Register'/>
         <p> Yes i have an account? <a className='login' href="#">Login</a> </p>
     </form>
   )

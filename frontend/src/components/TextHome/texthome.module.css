@@ -1,0 +1,27 @@
+.article{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.span {
+    letter-spacing: 2px;
+    font-size: 60px;
+    line-height: 90px;
+}
+.strong{
+    color: #FC8019;
+}
+.img{
+    width: 125px;
+    padding: 0px 15px 0px 15px;
+}
+
+.p{
+    width: 80%;
+     font-weight: 400;
+     font-size: 16px;
+     line-height: 25px;
+     color: #404040;
+}

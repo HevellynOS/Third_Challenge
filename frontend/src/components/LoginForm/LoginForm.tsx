@@ -16,7 +16,7 @@ const LoginForm = () => {
             <LabelData data='Passoword'/>
             <InputField type='password'/>
         </div>
-        <Button type='Login'/>
+        <Button height='66px' radius='10px' color="#FFFFFF" backgroundColor="#FC8019" width="365px" type='Login'/>
         <p> Don't have and account? <a href="#">Register</a> </p>
     </form>
   )

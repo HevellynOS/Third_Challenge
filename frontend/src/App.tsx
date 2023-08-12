@@ -1,13 +1,16 @@
 
 import './App.css'
-import RegisterPage from '../pages/RegisterPage'
-import LoginPage from  '../pages/LoginPage'
+import HomePage from '../pages/HomePage';
+import LoginPage from '../pages/LoginPage';
+import RegisterPage from '../pages/RegisterPage';
+
 function App() {
 
   return (
     <>
-      <RegisterPage/>
       <LoginPage/>
+      <RegisterPage/>
+      <HomePage/>
     </>
   )
 }

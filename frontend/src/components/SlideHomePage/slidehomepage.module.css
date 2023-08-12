@@ -1,0 +1,42 @@
+.container {
+  max-width: 600px;
+  width: 100%;
+}
+
+.slideContainer {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  cursor: grab;
+  background-color: aqua;
+  touch-action: pan-y;
+}
+
+.inner {
+  display: flex;
+}
+
+.items {
+  min-width: 200px;
+  min-height: 400px;
+  padding: 14px;
+  transition: transform 0.5s;
+}
+
+.items img {
+  width: 400px;
+  height: 600px;
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+.active {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px){
+  .container {
+    max-width: 768px;
+  }
+
+}
