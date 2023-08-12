@@ -1,0 +1,26 @@
+
+.header {
+    @include flex-space-between;
+    height: 20vh;
+    margin: 0px 40px 0px 40px;
+}
+
+.navbar-header{
+    padding: 20px;
+    @include flex-center;
+
+    @include tablet {
+        display: none;
+    }
+    @include mobile {
+        display: none;
+    }
+}
+
+.img-nav{
+    padding: 20px;
+}
+
+.menu:hover{
+    cursor: pointer;
+}

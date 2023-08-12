@@ -26,6 +26,10 @@ const StyledInput = styled.input`
   &:active {
     border-color: #E64A19;
   }
+
+  @media (max-width: 500px) {
+    width: 300px;
+  }
 `;
 
 const InputField: React.FC<InputFieldProps> = ({ type }) => {
@@ -33,7 +37,7 @@ const InputField: React.FC<InputFieldProps> = ({ type }) => {
 
   const inputHandle = (event: React.ChangeEvent<HTMLInputElement>) => {
     setData(event.target.value);
-    console.log(data)
+    console.log(data);
   };
 
   return (

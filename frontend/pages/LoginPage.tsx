@@ -1,11 +1,11 @@
 
-import NavBar from '../src/components/NavBar/NavBar';
 import LoginForm from '../src/components/LoginForm/LoginForm'
 import Footer from '../src/components/Footer/Footer'
+import Header from '../src/components/Header/Header';
 const LoginPage = () => {
   return (
     <>
-        <NavBar showInput={false} showBag={false} showButton={false}/>
+        <Header showMenu={false} showNav={false}/>
         <main className='login-page'>
             <LoginForm/>
         </main>

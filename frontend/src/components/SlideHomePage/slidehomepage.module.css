@@ -8,7 +8,6 @@
   overflow: hidden;
   width: 100%;
   cursor: grab;
-  background-color: aqua;
   touch-action: pan-y;
 }
 
