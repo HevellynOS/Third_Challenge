@@ -7,8 +7,8 @@
 
 .span {
     letter-spacing: 2px;
-    font-size: 60px;
-    line-height: 90px;
+    font-size: 3rem;
+    line-height: 2rem;
 }
 .strong{
     color: #FC8019;
@@ -20,8 +20,18 @@
 
 .p{
     width: 80%;
+    padding: 10px;
      font-weight: 400;
      font-size: 16px;
      line-height: 25px;
      color: #404040;
+}
+
+@media (max-width: 375px) {
+    .span{
+        font-size: 2rem;
+    }
+    .img{
+        display: none;
+    }
 }
