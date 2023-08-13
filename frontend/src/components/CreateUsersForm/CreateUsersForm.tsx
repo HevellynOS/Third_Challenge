@@ -4,6 +4,7 @@ import Button from '../Button/Button'
 import InputField from '../InputField/InputField'
 import { LabelData } from '../LabelData/LabelData'
 import classes from './createusersform.module.css'
+import { Link } from 'react-router-dom'
 
 
 export const CreateUsersForm = () => {
@@ -29,8 +30,17 @@ export const CreateUsersForm = () => {
             <LabelData data='Confirm password'/>
             <InputField type='password'/>
         </div>
-        <Button height='66px' radius='10px' color="#FFFFFF" backgroundColor="#FC8019" width="365px" type='Register'/>
-        <p> Yes i have an account? <a className='login' href="#">Login</a> </p>
+        <Link to='/login'>
+            <Button
+                height='66px'
+                radius='10px'
+                color="#FFFFFF"
+                backgroundcolor="#FC8019"
+                width="365px"
+                buttontype='Register'
+                />
+        </Link>
+        <p> Yes i have an account? <Link to="/login">Login</Link> </p>
     </form>
   )
 }

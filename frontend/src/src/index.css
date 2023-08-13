@@ -86,7 +86,7 @@
 }
 
 .navbar-header {
-  padding: 2rem;
+  padding: 20px;
   align-items: center;
   justify-content: center;
   display: flex;
@@ -179,8 +179,12 @@
   font-family: "Poppins", sans-serif;
 }
 
-body {
-  width: 100%;
+.fitme-logo {
+  padding-left: 1rem;
+  font-size: 2rem;
+  font-weight: 800;
+  text-decoration: none;
+  list-style: none;
 }
 
 /*# sourceMappingURL=index.css.map */

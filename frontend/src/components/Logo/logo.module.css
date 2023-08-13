@@ -1,0 +1,11 @@
+.fitmeLogo{
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+    
+}
+
+.fitmeLogo span {
+    padding-left: 10px;
+}

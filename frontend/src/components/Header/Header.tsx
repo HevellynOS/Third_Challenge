@@ -5,6 +5,7 @@ import Bag from '../../assets/images/Bag.png';
 import Button from '../Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 interface HeaderProps {
   showNav: boolean;
@@ -36,13 +37,16 @@ const Header: React.FC<HeaderProps> = ({ showNav, showMenu }) => {
           <nav className='navbar-header'>
             <InputSearch />
             <img src={Bag} className='img-nav' alt="" />
-            <Button 
-              height='66px' 
-              radius='10px' 
-              color="#FFFFFF" 
-              backgroundColor="#202020" 
-              width="170px" 
-              type='Sign in'/> 
+            <Link to='/login'>
+              <Button
+                height='66px'
+                radius='10px'
+                color="#FFFFFF"
+                backgroundcolor="#202020"
+                width="170px"
+                buttontype='Sign in'
+                />
+              </Link>
           </nav>
         )
       )}

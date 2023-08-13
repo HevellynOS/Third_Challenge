@@ -1,7 +1,8 @@
 import React from 'react';
 import logoLight from '../../assets/images/logofitmelight.png';
 import logoDark from '../../assets/images/logofitme-dark.png';
-
+import { Link } from 'react-router-dom';
+import classes from './logo.module.css'
 interface NavbarProps {
     logo: boolean;
 }
@@ -9,11 +10,14 @@ interface NavbarProps {
 const Logo: React.FC<NavbarProps> = ({ logo }) => {
     const logoSrc = logo ? logoLight : logoDark;
 
+
     return (
-        <div className={logo ? 'logo' : 'logo-dark'}>
-            <img src={logoSrc} alt="logo" />
-            {logo && <span className='fitme-logo'>Fit Me</span>}
-        </div>
+            <Link className={classes.fitmeLogo} to={"/"}>
+                <div>
+                    <img src={logoSrc} alt="logo" />
+                    {logo && <span>Fit Me</span>}
+                </div>
+            </Link>
     );
 };
 

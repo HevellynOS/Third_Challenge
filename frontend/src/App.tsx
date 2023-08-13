@@ -1,17 +1,15 @@
 
+
+import { Outlet } from 'react-router-dom'
 import './App.css'
-import HomePage from '../pages/HomePage';
-import LoginPage from '../pages/LoginPage';
-import RegisterPage from '../pages/RegisterPage';
 
 function App() {
 
   return (
-    <>
-      <LoginPage/>
-      <RegisterPage/>
-      <HomePage/>
-    </>
+
+    <div className='App'>
+      <Outlet/>
+    </div>
   )
 }
 
