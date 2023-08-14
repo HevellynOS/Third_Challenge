@@ -19,10 +19,9 @@ const FitMeInfo: React.FC = () => {
   const getInfo = async () => {
     try {
       const response = await fetchData.get("classes/FitMe");
-      const responseData = response.data;
+      const responseData = response.data.results; // Access the 'results' field
       console.log("Response:", response);
       console.log("Response Data:", responseData);
-      // Check if responseData is an array before setting it to the state
       if (Array.isArray(responseData)) {
         setDatas(responseData);
       } else {
@@ -41,7 +40,7 @@ const FitMeInfo: React.FC = () => {
     <div>
       <h1>Datas from Backend API</h1>
       <ul>
-        {datas.length === 0 ? (<p>Loading...</p>) : (datas.map((data) => (
+        {datas.length === 0 ? (<li>Loading...</li>) : (datas.map((data) => (
             
             <li className={classes.dish} key={data.objectId}>
               <img src={data.image} alt="" />
@@ -51,7 +50,6 @@ const FitMeInfo: React.FC = () => {
               <p>Top Dishes: {data.topDishes.join(", ")}</p>
               <p>Location: {data.location}</p>
               <p>Is Expensive: {data.isExpensive ? 'Yes' : 'No'}</p>
-              {/* Add more JSX elements for other properties */}
             </li>
           ))
         )}
