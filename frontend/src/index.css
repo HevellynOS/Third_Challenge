@@ -142,7 +142,6 @@
 }
 
 .login-page {
-  width: 100%;
   padding: 5rem;
 }
 @media (min-width: 481px) and (max-width: 768px) {
@@ -177,10 +176,6 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-}
-
-body {
-  width: 100%;
 }
 
 /*# sourceMappingURL=index.css.map */

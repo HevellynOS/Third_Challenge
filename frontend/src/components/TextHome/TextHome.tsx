@@ -5,6 +5,7 @@ import appleimg  from '../../assets/images/appleimg.png'
 import classes from './texthome.module.css'
 const TextHome = () => {
   return (
+    
     <article className={classes.article}>
         <span className={classes.span}>Premium 
             <strong className={classes.strong}>quality
@@ -15,7 +16,8 @@ const TextHome = () => {
                         <img className={classes.img} src={appleimg} alt="appleimg" /> 
             <strong className={classes.strong}>& Daily Life</strong>
         </span>
-        <p className={classes.p}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error doloribus aut maiores
+        <p className={classes.p}>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        <br/> Error doloribus aut maiores
              voluptatum dignissimos sunt laboriosam ad qui
               quam itaque quidem molestias, perspiciatis quas praesentium se
               qui commodi? Quo, in maiores.
