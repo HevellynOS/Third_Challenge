@@ -42,6 +42,7 @@ const FitMeInfo: React.FC = () => {
       <h1>Datas from Backend API</h1>
       <ul>
         {datas.length === 0 ? (<p>Loading...</p>) : (datas.map((data) => (
+            
             <li className={classes.dish} key={data.objectId}>
               <img src={data.image} alt="" />
               <h2>{data.name}</h2>

@@ -2,7 +2,6 @@
 import { styled } from "styled-components";
 
 interface ButtonProps {
-    buttontype: string;
     color: string;
     backgroundcolor: string;
     width: string;
