@@ -5,7 +5,7 @@ import classes from './secondsection.module.css'
 const SecondSection = () => {
   return (
     <section className={classes.section}>
-      <FitMeInfo/>
+        <FitMeInfo/>
     </section>
   )
 }
