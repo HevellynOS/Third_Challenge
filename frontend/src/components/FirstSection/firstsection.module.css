@@ -1,13 +1,12 @@
 
 .design{
     position: relative;
-    top: 100px;
+    top: 250px;
     right: 80px;
     background-color: #f2954994;
-    width: 600px;
+    width: 400px;
     height: 190px;
     transform: rotate(-37.84deg);
-
     border-radius: 0px 100px 100px 0px;
 }
 .section{

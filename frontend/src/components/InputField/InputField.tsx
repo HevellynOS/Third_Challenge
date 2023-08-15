@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+
 import styled from 'styled-components';
 
 interface InputFieldProps {
   type: string;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const StyledInput = styled.input`
@@ -32,19 +33,12 @@ const StyledInput = styled.input`
   }
 `;
 
-const InputField: React.FC<InputFieldProps> = ({ type }) => {
-  const [data, setData] = useState('');
-
-  const inputHandle = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setData(event.target.value);
-    console.log(data);
-  };
+const InputField: React.FC<InputFieldProps> = ({ type, onChange }) => {
 
   return (
     <StyledInput
       type={type}
-      value={data}
-      onChange={inputHandle}
+      onChange={onChange}
     />
   );
 };

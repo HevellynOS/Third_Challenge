@@ -7,7 +7,7 @@ const InputStyled = styled.div`
 display: flex;
 border: 2px solid #808080;
 align-items: center;
-width: 550px;
+width: 500px;
 height: 49px;
 border-radius: 10px;
 opacity: 0.75;

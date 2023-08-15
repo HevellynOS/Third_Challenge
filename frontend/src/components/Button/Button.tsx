@@ -1,8 +1,9 @@
 import React from 'react';
-import StyledButton from './StyledButton'; // Adjust the import path accordingly
+import StyledButton from './StyledButton';
 
-interface ButtonProps {
-  buttontype: string;
+interface ButtonProps { 
+  text: string;
+  click: (event: React.FormEvent) => Promise<void>;
   color: string;
   backgroundcolor: string;
   width: string;
@@ -10,12 +11,7 @@ interface ButtonProps {
   radius: string;
 }
 
-
-const Button: React.FC<ButtonProps> = ({ buttontype, color, backgroundcolor, width, height, radius }) => {
-  const registerHandleClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
-    e.preventDefault();
-    console.log('Button clicked');
-  };
+const Button: React.FC<ButtonProps> = ({ text, click, color, backgroundcolor, width, height, radius }) => {
 
   return (
     <StyledButton
@@ -24,10 +20,11 @@ const Button: React.FC<ButtonProps> = ({ buttontype, color, backgroundcolor, wid
       width={width}
       height={height}
       radius={radius}
-      onClick={registerHandleClick}
+      onClick={click}
     >
-      {buttontype}
+      {text}
     </StyledButton>
+  
   );
 };
 
