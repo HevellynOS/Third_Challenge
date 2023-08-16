@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({ showNav, showMenu }) => {
                 color="#FFFFFF"
                 backgroundcolor="#202020"
                 width="170px"
-                buttontype='Sign in'
+                
                 />
               </Link>
           </nav>

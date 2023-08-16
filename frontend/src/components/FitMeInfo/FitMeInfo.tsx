@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import fetchData from "../../../../backend/index";
 import DishCard01 from '../../assets/images/dishCard01.png'
-import FitMeCard from "../FitMeCard/FitMeCard";
 import classes from './fitmeinfo.module.css';
 import deliveryTime from '../../assets/images/deliveryTime.png';
 import greenStar from '../../assets/images/greenStar.png';
@@ -44,7 +43,6 @@ const FitMeInfo: React.FC = () => {
         <li>Loading...</li>
       ) : (
         datas.slice(0, 8).map((data) => (
-          <FitMeCard key={data.objectId}>
             <li>
               <img src={DishCard01} alt="" />
               <div className={classes.infoContainer}>
@@ -62,7 +60,6 @@ const FitMeInfo: React.FC = () => {
                 </picture>
               </div>
             </li>
-          </FitMeCard>
         ))
       )}
     </ul>

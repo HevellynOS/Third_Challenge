@@ -58,7 +58,7 @@ const LoginForm: React.FC = () => {
       <Button
           text='Login'
           click={handleLogin}
-          color="#FFFFFF" // Customize these props as needed
+          color="#FFFFFF" 
           backgroundcolor="#FC8019"
           width="365px"
           height="66px"
