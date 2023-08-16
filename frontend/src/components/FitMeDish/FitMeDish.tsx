@@ -22,7 +22,7 @@ const FitMeDish: React.FC = () => {
   const getInfo = async () => {
     try {
       const response = await fetchData.get("classes/Fitme");
-      const responseData = response.data.results; // Access the 'results' field
+      const responseData = response.data.results; 
       if (Array.isArray(responseData)) {
         setDatas(responseData);
       } else {
