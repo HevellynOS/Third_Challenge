@@ -2,4 +2,12 @@
 .section{
     display: flex;
     flex-direction: column;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    align-self: self-start;
+    margin-left: 270px;
 }

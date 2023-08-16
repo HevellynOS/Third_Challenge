@@ -1,45 +1,58 @@
-
-import { styled } from "styled-components"
+import { styled } from "styled-components";
 import searchIcon from '../../assets/images/search.png';
 
+interface InputSearchProps {
+  type?: string;
+  placeholder?: string;
+}
 
 const InputStyled = styled.div`
-display: flex;
-border: 2px solid #808080;
-align-items: center;
-width: 500px;
-height: 49px;
-border-radius: 10px;
-opacity: 0.75;
+  position: relative;
+  width: 450px;
+  height: 49px;
+  border: solid 1px black; 
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px 15px 25px;
+  border-radius: 40px;
+  color: #808080;
+  &:focus-within {
+    border-color: #FC8019; 
+    box-shadow: 0 0 8px #FC8019; 
+  }
 `;
 
-const InputField = styled.input`
-flex: 1;
-border: none;
-padding: 15px 10px;
-border-radius: 10px;
-outline: none;
+const SearchInput = styled.input`
+  width: calc(100% - 30px);
+  height: 100%;
+  padding-left: 30px;
+  border: none;
+  outline: none;
+  border-radius: inherit;
+  color: inherit;
+  
 `;
 
 const SearchIcon = styled.div`
-width: 20px;
-height: 20px;
-background-image: url(${searchIcon});
-background-size: cover;
-margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  background-image: url(${searchIcon});
+  background-size: cover;
+  margin-left: 10px;
+  position: absolute;
+  right: 15px; 
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
 `;
 
+const InputSearch: React.FC<InputSearchProps> = ({ type, placeholder }) => {
+  return (
+    <InputStyled>
+      <SearchInput type={type} placeholder={placeholder} />
+      <SearchIcon />
+    </InputStyled>
+  );
+};
 
-
-const InputSearch = () => {
-
-  
-    return (
-      <InputStyled>
-        <InputField type="text" placeholder="Enter item or restaurant you are looking for" />
-        <SearchIcon />
-      </InputStyled>
-    );
-  };
-
-export default InputSearch
+export default InputSearch;

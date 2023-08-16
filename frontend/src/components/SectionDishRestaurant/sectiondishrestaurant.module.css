@@ -1,0 +1,31 @@
+.section{
+    background-color: black;
+    color: white;
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+}
+
+.articleDish{
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.offers{
+    width: 392px;
+    height: 184px;
+    border-radius: 20px;
+    padding: 30px;
+    gap: 20px;
+    border: dashed 2px #FC8019;
+    flex-direction: column;
+    display: flex;
+
+}
+
+.offers picture {
+    display: flex;
+    flex-direction: row;
+}

@@ -5,6 +5,7 @@ import classes from './fitmeinfo.module.css';
 import deliveryTime from '../../assets/images/deliveryTime.png';
 import greenStar from '../../assets/images/greenStar.png';
 import redStar from '../../assets/images/redStar.png';
+import { Link } from "react-router-dom";
 
 interface FitMeData {
   objectId: string;
@@ -43,7 +44,8 @@ const FitMeInfo: React.FC = () => {
         <li>Loading...</li>
       ) : (
         datas.slice(0, 8).map((data) => (
-            <li>
+        <li className={classes.li} key={data.objectId}>
+            <Link className={classes.link} to={`/restaurant-page/${data.name}`}>
               <img src={DishCard01} alt="" />
               <div className={classes.infoContainer}>
                 <h2 className={classes.name}>{data.name}</h2>
@@ -59,7 +61,8 @@ const FitMeInfo: React.FC = () => {
                   <caption className={classes.captionDeliveryTime}><p>{data.deliveryTime}</p></caption>
                 </picture>
               </div>
-            </li>
+            </Link>
+          </li>
         ))
       )}
     </ul>

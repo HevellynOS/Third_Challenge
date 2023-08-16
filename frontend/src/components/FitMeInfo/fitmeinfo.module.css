@@ -5,6 +5,7 @@
     gap: 20px; 
     width: 100%;
     max-width: 900px; 
+    list-style: none;
   
     @media (max-width: 768px) {
       grid-template-columns: repeat(2, 1fr); 
@@ -16,7 +17,14 @@
         gap: 10px; 
       }
   }
-  
+
+
+.link{
+
+    text-decoration: none;
+    color: #202020;
+
+}
 
 .name{
     padding-bottom: 20px;

@@ -2,9 +2,9 @@
 
 
 import Logo from '../Logo/Logo'
-import facebookIcon from '../../assets/images/facebook icon.png'
-import instagramIcon from '../../assets/images/instagram icon.png'
-import twitterIcon from '../../assets/images/twitter icon.png'
+import facebookIcon from '../../assets/images/facebook-icon.png'
+import instagramIcon from '../../assets/images/instagram-icon.png'
+import twitterIcon from '../../assets/images/twitter-icon.png'
 
 const Footer = () => {
   return (
