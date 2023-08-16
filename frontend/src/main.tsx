@@ -6,6 +6,7 @@ import './index.css'
 import HomePage from '../pages/HomePage'
 import RegisterPage from '../pages/RegisterPage'
 import LoginPage from '../pages/LoginPage'
+import RestaurantPage from '../pages/RestaurantPage.tsx'
 
 
 
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path:"/login",
         element: <LoginPage/>
+      },
+      {
+        path:"/restaurant-page",
+        element: <RestaurantPage/>
       },
 
     ]
