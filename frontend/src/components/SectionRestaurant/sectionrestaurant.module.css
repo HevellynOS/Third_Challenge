@@ -1,0 +1,53 @@
+.section{
+    display: flex;
+    padding: 70px 120px 70px 120px;
+    height: 539px;
+}
+
+.recommended{
+    background-color: red;
+    padding-right: 50px;
+    width: 20%;
+    border-right: solid 2px #808080;
+}
+
+.recommended ul>li {
+    list-style: none;
+}
+
+.topDishes{
+    width: 40%;
+    padding: 20px;
+}
+.cartADDContainer{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.cartImg{
+    width: 160px ;
+    height: 160px;
+    border-radius: 10px;
+}
+.btn{
+    top: 120px;
+    left: 30px;
+    position: absolute;
+    background-color: white;
+    width: 99px;
+    height: 54px;
+    font-size: 15px;
+    font-weight: 500px;
+    color: #1AC84B;
+    line-height: 24px;
+    border-radius: 10px;
+    padding: 15px 25px 15px 25px;
+    gap: 10px;
+    cursor: pointer;
+
+
+}
+
+.btn:hover{
+    color: #821ac8;
+}

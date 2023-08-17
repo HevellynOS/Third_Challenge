@@ -3,7 +3,6 @@
 
 import { Outlet } from 'react-router-dom'
 import './App.css'
-import FitMeInfo from './components/FitMeInfo/FitMeInfo'
 
 function App() {
 

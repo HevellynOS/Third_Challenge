@@ -1,58 +1,60 @@
-import React, { useState, useEffect } from "react";
-import fetchData from "../../../../backend/index";
-import classes from './fitmeinfo.module.css';
+import React from 'react';
+import useFitMeData from '../../../../backend/hooks/useFitMeData';
+import starGreen from '../../assets/images/greenStar.png';
+import redStar from '../../assets/images/redStar.png';
+import classes from './fitmedish.module.css'
 
-interface FitMeDishData {
-  objectId: string;
-  name: string;
-  price: number;
-  description: string;
-  image: string;
-  rating: number;
-  deliveryTime: string;
-  isExpensive: boolean;
-  location: string;
-  topDishes: string[];
+interface FitMeDishProps {
+  selectedRestaurantId: string;
 }
 
-const FitMeDish: React.FC = () => {
-  const [datas, setDatas] = useState<FitMeDishData[]>([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
+const FitMeDish: React.FC<FitMeDishProps> = ({ selectedRestaurantId }) => {
+  const { fitMeData, loading, error } = useFitMeData();
 
-  const getInfo = async () => {
-    try {
-      const response = await fetchData.get("classes/Fitme");
-      const responseData = response.data.results; 
-      if (Array.isArray(responseData)) {
-        setDatas(responseData);
-      } else {
-        setDatas([]);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
-  useEffect(() => {
-    getInfo();
-  }, []);
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
+
+  if (!fitMeData) {
+    return null;
+  }
+
+  const selectedRestaurant = fitMeData.find(
+    (restaurant) => restaurant.objectId === selectedRestaurantId
+  );
+
+  if (!selectedRestaurant) {
+    return <p>Restaurant not found.</p>;
+  }
+
+  const { name, location, rating, deliveryTime } = selectedRestaurant;
 
   return (
-    <div>
-      {datas.length === 0 ? (
-        <p>Loading...</p>
-      ) : (
-        <div className={classes.dish}>
-          <h2>{datas[currentIndex].name}</h2>
-          <p>{datas[currentIndex].location}</p>
-          <div>
-            <p>Price: {datas[currentIndex].price}</p>
-            <p>Rating: {datas[currentIndex].rating}</p>
-            <p>Delivery Time: {datas[currentIndex].deliveryTime}</p>
+    <div className={classes.container}>
+      <div className={classes.dish}>
+        <h2>{name}</h2>
+        <p>{location}</p>
+        <div className={classes.infos}>
+          <div className={classes.ratingsData}>
+            {rating < 4 ? (
+              <img src={redStar} alt="Red Star" />
+            ) : (
+              <img src={starGreen} alt="Green Star" />
+            )}
+            <span>{rating}</span>
+            <span>100+ ratings</span>
           </div>
-          <p>Expensive: {datas[currentIndex].isExpensive ? 'Yes' : 'No'}</p>
+          <p className={classes.p}>{deliveryTime} Delivery Time</p>
+          <div className={classes.cost}>
+            <span>200</span>
+            <p>Cost for two</p>
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };

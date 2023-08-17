@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-interface FitMeData {
+export interface FitMeData {
   objectId: string;
   name: string;
   rating: number;
@@ -11,14 +11,14 @@ interface FitMeData {
   topDishes: TopDishData[];
 }
 
-interface TopDishData {
+export interface TopDishData {
   name: string;
   description: string;
   image: string;
   price: number;
 }
 
-interface UseFitMeDataResult {
+export interface UseFitMeDataResult {
   fitMeData: FitMeData[] | null;
   loading: boolean;
   error: string | null;
@@ -57,7 +57,7 @@ const useFitMeData = (): UseFitMeDataResult => {
           }
         }
       }
-      
+
       fragment AllDishes on Dish {
         name
         description
@@ -70,6 +70,8 @@ const useFitMeData = (): UseFitMeDataResult => {
       setLoading(true);
       const response = await axios.post(url, { query }, { headers });
       const responseData = response.data.data.fitMes.edges.map((edge: any) => edge.node);
+
+      console.log("Received data:", responseData);
       setFitMeData(responseData || null);
       setLoading(false);
     } catch (error) {

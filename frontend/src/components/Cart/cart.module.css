@@ -1,0 +1,39 @@
+.articleCart{
+    width: 40%;
+    padding: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    flex-direction: column;
+    display: flex;
+    gap: 50px;
+
+}
+
+.headerCart{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.containerName strong{
+    color: #FC8019;
+}
+.containerDishes{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.containerDish {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+ 
+} 
+.btnRemove{
+    width: 100px;
+    color: #ffff;
+    border: none;
+    background-color: #FC8019;
+}
