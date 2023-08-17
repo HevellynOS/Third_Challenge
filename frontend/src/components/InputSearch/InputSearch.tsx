@@ -9,7 +9,7 @@ interface InputSearchProps {
 const InputStyled = styled.div`
   background-color: white;
   position: relative;
-  width: 70%;
+  width: 626px;
   height: 49px;
   border: solid 1px black; 
   display: flex;

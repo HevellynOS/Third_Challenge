@@ -11,45 +11,43 @@ interface CartProps {
 
 const Cart: React.FC<CartProps> = ({ fitMeData, cartItems: propCartItems, setCartItems }) => {
   const handleOrder = () => {
-    alert('Your order has been placed! Thank you for choosing FitMe.');
+    alert('Your order has been placed! Thank you for choosing FitMe. Total Price: $' + calculateTotalPrice().toFixed(2));
   };
 
   if (!fitMeData) {
     return null;
   }
 
-  // Calculate the total price of items in the cart
-  const totalPrice = propCartItems.reduce((total, item) => total + item.price, 0);
+  const [itemQuantities, setItemQuantities] = useState<{ [itemName: string]: number }>(
+    propCartItems.reduce((quantities, item) => {
+      quantities[item.name] = 1;
+      return quantities;
+    }, {})
+  );
 
   const handleAddItem = (dishName: string) => {
-    console.log(`Adding item: ${dishName}`);
-    const dishToAdd = fitMeData[0].topDishes.find(dish => dish.name === dishName);
-    if (dishToAdd) {
-      const updatedCartItems = [...propCartItems, dishToAdd];
-      setCartItems(updatedCartItems);
-    }
+    const updatedQuantities = { ...itemQuantities };
+    updatedQuantities[dishName] = (updatedQuantities[dishName] || 0) + 1;
+    setItemQuantities(updatedQuantities);
   };
 
   const handleRemoveSingleItem = (dishName: string) => {
-    const updatedCartItems = [...propCartItems];
-    const index = updatedCartItems.findIndex(item => item.name === dishName);
-    if (index !== -1) {
-      updatedCartItems.splice(index, 1);
-      setCartItems(updatedCartItems);
+    const updatedQuantities = { ...itemQuantities };
+    updatedQuantities[dishName] = (updatedQuantities[dishName] || 1) - 1;
+    if (updatedQuantities[dishName] <= 0) {
+      delete updatedQuantities[dishName];
     }
+    setItemQuantities(updatedQuantities);
   };
 
-  // Create an object to keep track of how many of each dish has been selected
-  const dishCounts: Record<string, number> = {};
-
-  // Count the occurrences of each dish in the cart
-  propCartItems.forEach((item) => {
-    if (dishCounts[item.name]) {
-      dishCounts[item.name]++;
-    } else {
-      dishCounts[item.name] = 1;
+  const calculateTotalPrice = () => {
+    let totalPrice = 0;
+    for (const item of propCartItems) {
+      const quantity = itemQuantities[item.name] || 1;
+      totalPrice += item.price * quantity;
     }
-  });
+    return totalPrice;
+  };
 
   return (
     <article className={classes.articleCart}>
@@ -58,22 +56,23 @@ const Cart: React.FC<CartProps> = ({ fitMeData, cartItems: propCartItems, setCar
         <span>{propCartItems.length} Items</span>
       </header>
       <div className={classes.containerName}>
-        <h3>from <strong>{fitMeData && fitMeData[0].name}</strong></h3>
+        <h3>from <strong>{fitMeData[0]?.name}</strong></h3>
       </div>
       <div className={classes.containerDishes}>
         {propCartItems.map((item, index) => (
           <div className={classes.containerDish} key={index}>
             <span>{item.name}</span>
-            <span>{item.price}</span>
+            <span>${(item.price * (itemQuantities[item.name] || 1)).toFixed(2)}</span>
             <button onClick={() => handleAddItem(item.name)}>+</button>
-            <span>+ {dishCounts[item.name]} -</span>
+            <span>{itemQuantities[item.name] || 1}</span>
             <button onClick={() => handleRemoveSingleItem(item.name)}>-</button>
           </div>
         ))}
       </div>
-      <p>Total Price: ${totalPrice.toFixed(2)}</p>
+      <h5 className={classes.total}>Subtotal:<span> ${calculateTotalPrice().toFixed(2)}</span></h5>
+      <p className={classes.extra}>Extra charges may apply</p>
       <Button
-        text="Place Order"
+        text="Checkout"
         click={handleOrder}
         color="#FFFFFF"
         backgroundcolor="#FC8019"
