@@ -78,23 +78,13 @@
 }
 
 .header {
+  width: 100%;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   display: flex;
+  flex-direction: row;
   height: 20vh;
   margin: 0px 40px 0px 40px;
-}
-
-.input-search-header {
-  position: relative;
-  width: 450px;
-  height: 49px;
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 25px 15px 25px;
-  border-radius: 40px;
-  color: #808080;
-  background-image: url("../../assets/images/search.png");
 }
 
 .search-icon {
@@ -107,11 +97,17 @@
 }
 
 .navbar-header {
+  width: 854px;
   padding: 2rem;
   align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: row;
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar-header {
+    display: none;
+  }
 }
 @media (min-width: 481px) and (max-width: 768px) {
   .navbar-header {
@@ -190,6 +186,37 @@
   cursor: pointer;
   color: #ff9f5b;
   transition: 1.2s;
+}
+
+.restaurant-page {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .restaurant-page {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .restaurant-page {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width: 480px) {
+  .restaurant-page {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 * {

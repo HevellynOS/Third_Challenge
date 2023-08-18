@@ -8,10 +8,12 @@
     display: flex;
     gap: 20px;
     overflow-y: auto ;
+    border-radius: 30px;
+    background-color: white;
 
 }
 .articleCart::-webkit-scrollbar {
-    width: 10px; /* Width of the scrollbar */
+    width: 10px; 
 }
 
 .articleCart::-webkit-scrollbar-thumb{
@@ -73,3 +75,8 @@
     line-height: 21px;
 }
 
+@media(max-width: 1080px) {
+    .articleCart{
+        width: 100%;
+    }
+}

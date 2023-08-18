@@ -1,7 +1,13 @@
 .section{
     display: flex;
+    justify-content: space-between;
+    width: 100%;
     padding: 70px 120px 70px 120px;
-    height: 539px;
+    height: auto;
+}
+.section > div {
+    display: flex;
+    gap: 50px;
 }
 
 .recommended{
@@ -46,7 +52,38 @@
 
 
 }
+.cartContainer{
+    display: block;
+    flex-direction: row;
+}
 
 .btn:hover{
     color: #821ac8;
+}
+
+@media(max-width: 1080px){
+    .section{
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        
+    }
+    .recommended{
+        border-bottom: solid 2px black;
+        text-align: center;
+        border: none;
+        width: 100%;
+       
+    }
+    .cartADDContainer{
+        width: 100%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    .btn{
+        left: 320px;
+    }
 }

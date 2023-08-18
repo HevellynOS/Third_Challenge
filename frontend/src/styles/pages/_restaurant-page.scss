@@ -1,0 +1,15 @@
+
+.restaurant-page{
+    @include flex-space-between;
+    flex-direction: column;
+    @include laptop {
+        @include flex-center-column;
+    }
+    @include tablet {
+     @include flex-center-column;
+    }
+    @include mobile {
+        @include flex-center-column;
+    }
+}
+

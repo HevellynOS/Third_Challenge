@@ -1,6 +1,7 @@
 
 .header {
-    @include flex-space-between;
+    width: 100%;
+    @include flex-space-around;
     height: 20vh;
     margin: 0px 40px 0px 40px;
 }
@@ -16,10 +17,13 @@
 }
 
 .navbar-header{
-
+    width: 854px;
     padding: 2rem;
     
     @include flex-center;
+    @include laptop{
+        display: none;
+    }
 
     @include tablet {
         display: none;

@@ -12,10 +12,12 @@ const RestaurantPage = () => {
 
   return (
     <>
-         <Header showMenu={true} showNav={true}/>
-          <SectionDishRestaurant/>
-          <SectionRestaurant selectedRestaurantId={restaurantId}/>
-         <Footer/>
+         <div className='restaurant-page'>
+           <Header showMenu={true} showNav={true}/>
+              <SectionDishRestaurant/>
+              <SectionRestaurant selectedRestaurantId={restaurantId}/>
+           <Footer/>
+         </div>
     </>
   )
 }
