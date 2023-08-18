@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     padding: 100px;
+    
 
 }
 
@@ -14,6 +15,8 @@
 }
 .strong{
     color: #FC8019;
+    
+    font-size: 2.5rem;
 }
 .img{
     width: 125px;
@@ -29,7 +32,10 @@
      color: #404040;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 505px) {
+    .article{
+        padding: 20px;
+    }
     .span{
         font-size: 2rem;
     }
