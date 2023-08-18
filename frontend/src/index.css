@@ -85,18 +85,6 @@
   margin: 0px 40px 0px 40px;
 }
 
-.input-search-header {
-  position: relative;
-  width: 450px;
-  height: 49px;
-  display: flex;
-  justify-content: space-between;
-  padding: 15px 25px 15px 25px;
-  border-radius: 40px;
-  color: #808080;
-  background-image: url("../../assets/images/search.png");
-}
-
 .search-icon {
   position: absolute;
   top: 50%;
