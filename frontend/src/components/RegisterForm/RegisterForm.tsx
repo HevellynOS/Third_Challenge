@@ -14,6 +14,12 @@ const RegisterForm: React.FC = () => {
   const [registrationError, setRegistrationError] = useState<string>('');
 
   const { createUser } = useUsersData();
+  
+  const isPasswordStrong = (password: string) => {
+    const strongPasswordPattern = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+    return strongPasswordPattern.test(password);
+  };
+
 
   const handleRegister = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -34,7 +40,7 @@ const RegisterForm: React.FC = () => {
       await createUser(newUser);
       console.log('Registration successful');
       setRegistrationError('');
-      // Optionally, you can perform a redirect here after successful registration
+
     } catch (error) {
       console.log('Registration failed');
       setRegistrationError('Error registering user');
@@ -63,6 +69,13 @@ const RegisterForm: React.FC = () => {
         <label htmlFor="confirmPassword">Confirm Password</label>
         <InputField type="password" onChange={(event) => setConfirmPassword(event.target.value)} />
       </div>
+      {password && !isPasswordStrong(password) && (
+        <div className={classes.container}>
+          <p className={classes.passwordError}>
+            Password should be at least 8 characters long and contain at least one letter, one digit, and one special character.
+          </p>
+        </div>
+      )}
       {registrationError && <p className={classes.errorMsg}>{registrationError}</p>}
       <Button
               text="Register"
