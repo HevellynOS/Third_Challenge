@@ -1,5 +1,5 @@
 import React from 'react';
-import { CreateUsersForm } from '../src/components/CreateUsersForm/CreateUsersForm';
+import RegisterForm from '../src/components/RegisterForm/RegisterForm';
 import Header from '../src/components/Header/Header';
 import Footer from '../src/components/Footer/Footer';
 
@@ -11,7 +11,7 @@ const RegisterPage: React.FC = () => {
     <main className='register-page'>
       <h1>Register</h1>
       <hr />
-      <CreateUsersForm />
+      <RegisterForm />
     </main>
       <Footer/>
     </>

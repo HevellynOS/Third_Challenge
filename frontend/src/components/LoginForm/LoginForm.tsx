@@ -1,8 +1,7 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import InputField from '../InputField/InputField';
-import classes from '../CreateUsersForm/createusersform.module.css';
+import classes from './loginform.module.css';
 import Button from '../Button/Button';
 import useUsersData from '../../../../backend/hooks/useUsersData';
 
@@ -11,14 +10,23 @@ const LoginForm: React.FC = () => {
   const [password, setPassword] = useState('');
   const [loginError, setLoginError] = useState<string>('');
 
-  const { usersData } = useUsersData();
+  const { usersData, fetchUsersData } = useUsersData();
+
+  useEffect(() => {
+    fetchUsersData(); // Buscar dados dos usuários quando o componente for montado
+  }, []);
 
   const handleLogin = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    const matchingUser = usersData.find(user => user.username === username && user.password === password);
+    if (!username || !password) {
+      console.error("Error logging in: Username and password are required");
+      return;
+    }
 
-    if (matchingUser) {
+    const matchingUser = usersData.find(user => user.username === username);
+
+    if (matchingUser && matchingUser.password === password) {
       console.log("Login successful");
       setLoginError('');
     } else {
@@ -26,7 +34,6 @@ const LoginForm: React.FC = () => {
       setLoginError('Invalid username or password');
     }
   };
-
   return (
     <form onSubmit={handleLogin} className={classes.form}>
       <div className={classes.container}>
@@ -44,8 +51,9 @@ const LoginForm: React.FC = () => {
         backgroundcolor="#FC8019"
         width="365px"
         height="66px"
-        radius="10px" 
-        click={handleLogin}      />
+        radius="10px" click={function (event: React.FormEvent<Element>): Promise<void> {
+          throw new Error('Function not implemented.');
+        } }      />
       <p>Don't have an account? 
         <Link to="/register">
           Register
