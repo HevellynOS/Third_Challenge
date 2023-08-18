@@ -66,15 +66,13 @@
 
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        text-align: center;
         
     }
     .recommended{
         border-bottom: solid 2px black;
         text-align: center;
         border: none;
-        width: 100%;
+        width: 500px;
        
     }
     .cartADDContainer{
@@ -85,5 +83,28 @@
     }
     .btn{
         left: 320px;
+    }
+    .topDishes{
+        padding-left: 100px;
+        padding-right: 100px;
+        text-align: center;
+        width: 500px;
+    }
+}
+@media(max-width:768px){
+    .btn{
+        left: 210px;
+    }
+}
+
+@media(max-width: 600px){
+    .btn{
+        left: 125px;
+    }
+}
+
+@media(max-width: 500px){
+    .btn{
+        left: 10px;
     }
 }
