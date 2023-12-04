@@ -13,6 +13,7 @@ const RegisterForm: React.FC = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [registrationError, setRegistrationError] = useState<string>('');
 
+  console.log(username) 
   const { createUser } = useUsersData();
   
   const isPasswordStrong = (password: string) => {
