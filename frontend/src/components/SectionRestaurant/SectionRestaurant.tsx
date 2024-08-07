@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import useFitMeData from '../../../../backend/hooks/useFitMeData';
 import classes from './sectionrestaurant.module.css';
 import Cart from '../Cart/Cart';
-import { TopDishData } from '../../../../backend/hooks/useFitMeData';
-import cartImg from '../../assets/images/cartImg.png';
-interface FitMeDishProps {
-  selectedRestaurantId?: string;
-}
+import useFitMeData from '../../../server/hook/useFitMeRestaurants';
+import { TopDishData } from '../../../server/hook/useFitMeRestaurants';
 
-const SectionRestaurant: React.FC<FitMeDishProps> = ({ selectedRestaurantId }) => {
+import cartImg from '../../assets/images/cartImg.png';
+
+const SectionRestaurant: React.FC = () => {
   const { fitMeData, loading, error } = useFitMeData();
-  const { restaurantId } = useParams();
+  const { restaurantId } = useParams<{ restaurantId: string }>();
 
   const [selectedDish, setSelectedDish] = useState<TopDishData | null>(null);
   const [cartItems, setCartItems] = useState<TopDishData[]>([]);
@@ -29,7 +27,7 @@ const SectionRestaurant: React.FC<FitMeDishProps> = ({ selectedRestaurantId }) =
   }
 
   const selectedRestaurant = fitMeData.find(
-    (restaurant) => restaurant.objectId === restaurantId
+    (restaurant) => restaurant.id === restaurantId
   );
 
   if (!selectedRestaurant) {
@@ -73,9 +71,9 @@ const SectionRestaurant: React.FC<FitMeDishProps> = ({ selectedRestaurantId }) =
         )}
       </article>
       <div className={classes.cartADDContainer}>
-          <img src={cartImg} className={classes.cartImg} alt="" />
-          <button onClick={handleSendCart} className={classes.btn}>Add +</button>
-        </div>
+        <img src={cartImg} className={classes.cartImg} alt="" />
+        <button onClick={handleSendCart} className={classes.btn}>Add +</button>
+      </div>
       <Cart fitMeData={fitMeData} cartItems={cartItems} setCartItems={setCartItems} />
     </section>
   );

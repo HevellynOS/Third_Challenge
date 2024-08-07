@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../Button/Button';
-import { FitMeData, TopDishData } from '../../../../backend/hooks/useFitMeData';
+import { FitMeData, TopDishData } from '../../../server/hook/useFitMeRestaurants';
 import classes from './cart.module.css';
 
 interface CartProps {
@@ -22,13 +22,18 @@ const Cart: React.FC<CartProps> = ({ fitMeData, cartItems: propCartItems, setCar
     propCartItems.reduce((quantities, item) => {
       quantities[item.name] = 1;
       return quantities;
-    }, {})
+    }, {} as { [itemName: string]: number })
   );
 
   const handleAddItem = (dishName: string) => {
     const updatedQuantities = { ...itemQuantities };
     updatedQuantities[dishName] = (updatedQuantities[dishName] || 0) + 1;
     setItemQuantities(updatedQuantities);
+
+    const updatedCartItems = propCartItems.map(item =>
+      item.name === dishName ? { ...item, quantity: updatedQuantities[dishName] } : item
+    );
+    setCartItems(updatedCartItems);
   };
 
   const handleRemoveSingleItem = (dishName: string) => {
@@ -38,6 +43,11 @@ const Cart: React.FC<CartProps> = ({ fitMeData, cartItems: propCartItems, setCar
       delete updatedQuantities[dishName];
     }
     setItemQuantities(updatedQuantities);
+
+    const updatedCartItems = propCartItems.map(item =>
+      item.name === dishName ? { ...item, quantity: updatedQuantities[dishName] } : item
+    ).filter(item => item.quantity > 0);
+    setCartItems(updatedCartItems);
   };
 
   const calculateTotalPrice = () => {
@@ -85,3 +95,4 @@ const Cart: React.FC<CartProps> = ({ fitMeData, cartItems: propCartItems, setCar
 };
 
 export default Cart;
+

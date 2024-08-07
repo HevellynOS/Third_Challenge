@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import InputField from '../InputField/InputField';
 import classes from './registerform.module.css';
 import Button from '../Button/Button';
-import useUsersData from '../../../../backend/hooks/useUsersData';
 
 const RegisterForm: React.FC = () => {
   const [username, setUsername] = useState('');

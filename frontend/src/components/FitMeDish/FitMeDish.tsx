@@ -1,5 +1,5 @@
 import React from 'react';
-import useFitMeData from '../../../../backend/hooks/useFitMeData';
+import useFitMeData from '../../../server/hook/useFitMeRestaurants';
 import starGreen from '../../assets/images/greenStar.png';
 import redStar from '../../assets/images/redStar.png';
 import classes from './fitmedish.module.css'
@@ -24,7 +24,7 @@ const FitMeDish: React.FC<FitMeDishProps> = ({ selectedRestaurantId }) => {
   }
 
   const selectedRestaurant = fitMeData.find(
-    (restaurant) => restaurant.objectId === selectedRestaurantId
+    (restaurant) => restaurant.id === selectedRestaurantId
   );
 
   if (!selectedRestaurant) {

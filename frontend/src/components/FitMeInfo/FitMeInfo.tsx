@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import useFitMeData from "../../../../backend/hooks/useFitMeData"; 
+import useFitMeData  from '../../../server/hook/useFitMeRestaurants';
 import DishCard01 from '../../assets/images/dishCard01.png';
 import classes from './fitmeinfo.module.css';
 import deliveryTime from '../../assets/images/deliveryTime.png';
@@ -25,8 +25,8 @@ const FitMeInfo: React.FC = () => {
   return (
     <ul className={classes.list}>
       {fitMeData.map((data) => (
-        <li className={classes.li} key={data.objectId}>
-          <Link className={classes.link} to={`/restaurant-page/${data.objectId}`}>
+        <li className={classes.li} key={data.id}>
+          <Link className={classes.link} to={`/restaurant-page/${data.id}`}>
             <img src={DishCard01} alt="" />
             <div className={classes.infoContainer}>
               <h2 className={classes.name}>{data.name}</h2>
