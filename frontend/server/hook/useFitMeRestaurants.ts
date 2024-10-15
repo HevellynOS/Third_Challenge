@@ -11,7 +11,7 @@ export interface FitMeData {
     location: string;
     topDishes: TopDishData[];
   }
-  
+
   export interface TopDishData {
     name: string;
     description: string;
